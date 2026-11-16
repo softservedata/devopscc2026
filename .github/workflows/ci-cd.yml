@@ -1,0 +1,17 @@
+name: Continues Integration
+on:
+  push:
+  workflow_dispatch:
+jobs:
+  prcheck:
+    runs-on: ubuntu-latest
+    steps:       
+      - name: Checkout ujp005devops
+        uses: actions/checkout@v7
+
+      - name: Git branch
+        run: "git branch"
+        
+      - name: List files in the repository
+        run: |
+          ls -al ${{ github.workspace }}
